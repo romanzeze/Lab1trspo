@@ -23,7 +23,7 @@ public class WithTheard {
                     break;
                 }
                 case 3: {
-                    original = RadixSort.readFromFile("input.txt");
+                    original = RadixSort.readFromFile("fail.txt");
                     break;
                 }
                 case 4: {
@@ -49,7 +49,7 @@ public class WithTheard {
                 case 2: {
                     long startTime = System.currentTimeMillis();
                     int[] result = parallelRadixSort(original);
-                    RadixSort.writeToFile(result, "output.txt");
+                    RadixSort.writeToFile(result, "fail.txt");
                     long stopTime = System.currentTimeMillis();
 
                     System.out.println("\nЧас виконання " + (stopTime - startTime) + " мілісекунд");

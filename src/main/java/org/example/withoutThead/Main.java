@@ -22,7 +22,8 @@ public class Main {
                     break;
                 }
                 case 3: {
-                    original = RadixSort.readFromFile("input.txt");
+                    String fileName = "fail.txt";
+                    original = RadixSort.readFromFile(fileName);
                     break;
                 }
                 case 4: {
@@ -48,7 +49,7 @@ public class Main {
                 case 2: {
                     long startTime = System.currentTimeMillis();
                     RadixSort.radixSort(original);
-                    RadixSort.writeToFile(original, "output.txt");
+                    RadixSort.writeToFile(original, "fail.txt");
                     long stopTime = System.currentTimeMillis();
 
                     System.out.println("\nЧас виконання " + (stopTime - startTime) + " мілісекунд");
