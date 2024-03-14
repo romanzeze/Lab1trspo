@@ -34,15 +34,13 @@ public class WithTheard {
             int choice2 = scan.nextInt();
             switch (choice2) {
                 case 1: {
+                    long startTime = System.currentTimeMillis();
                     System.out.println("Даний масив:");
                     RadixSort.printArray(original);
-
-                    long startTime = System.currentTimeMillis();
                     int[] result = parallelRadixSort(original);
-                    long stopTime = System.currentTimeMillis();
-
                     System.out.println("\nПосортований масив:");
                     RadixSort.printArray(result);
+                    long stopTime = System.currentTimeMillis();
                     System.out.println("\nЧас виконання " + (stopTime - startTime) + " мілісекунд");
                     break;
                 }

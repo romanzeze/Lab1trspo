@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class RadixSort {
+    // Реалізація алгоритму порозрядного сортування
     public static void radixSort(int[] arr) {
         if (arr == null || arr.length == 0) {
             return;
@@ -19,6 +20,7 @@ public class RadixSort {
         }
     }
 
+    // Пошук максимального значення в масиві
     private static int getMaxValue(int[] arr) {
         int max = arr[0];
         for (int num : arr) {
@@ -29,6 +31,7 @@ public class RadixSort {
         return max;
     }
 
+    // Сортування масиву за певним розрядом числа
     private static void countSort(int[] arr, int exp) {
         int n = arr.length;
         int[] output = new int[n];
@@ -49,6 +52,7 @@ public class RadixSort {
 
         System.arraycopy(output, 0, arr, 0, n);
     }
+
 
     public static int[] readFromFile(String fileName) {
         try {
@@ -72,6 +76,7 @@ public class RadixSort {
         }
     }
 
+
     public static void writeToFile(int[] arr, String fileName) {
         try (FileWriter fw = new FileWriter(fileName)) {
             for (int j : arr) {
@@ -84,6 +89,7 @@ public class RadixSort {
         }
     }
 
+
     public static int[] generateRandomInput(int size) {
         Random rand = new Random();
         int[] arr = new int[size];
@@ -92,6 +98,7 @@ public class RadixSort {
         }
         return arr;
     }
+
     public static int[] readInputFromConsole() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Введіть розмір масиву: ");
@@ -103,6 +110,8 @@ public class RadixSort {
         }
         return arr;
     }
+
+
     public static void printArray(int[] arr) {
         for (int j : arr) {
             System.out.print(j + " ");
@@ -110,7 +119,8 @@ public class RadixSort {
         System.out.println();
     }
 
-    public static int[] finalMerge(int[] internal, int[]  internal1) {
+    // Об'єднання двох відсортованих масивів
+    public static int[] finalMerge(int[] internal, int[] internal1) {
         int[] result = new int[internal.length +  internal1.length];
         int i = 0;
         int j = 0;
@@ -136,6 +146,5 @@ public class RadixSort {
             r++;
         }
         return result;
-
     }
 }
